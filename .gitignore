@@ -1,3 +1,10 @@
+# Folders
+cpp_code/build
+cpp_code/tests/data.tsv
+
+# QT Creator
+*.user
+
 # Prerequisites
 *.d
 
