@@ -1,0 +1,3 @@
+[submodule "pkg_sensors/nerian_stereo"]
+	path = pkg_sensors/nerian_stereo
+	url = https://github.com/kedingp/sandbox.git
