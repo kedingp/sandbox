@@ -15,16 +15,12 @@ include_directories(include ${GTEST_INCLUDE_DIRS})
 #However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "src/*.cpp")
  
-add_executable(prog src/mainapp.cpp src/hello.cpp)
 add_executable(tt_prog src/tabletennisplayer_app.cpp src/tabletennisplayer.cpp src/i_strokable.cpp src/forehandstroker.cpp
                src/backhandstroker.cpp)
 
 
  
 # Link runTests with what we want to test and the GTest and pthread library
-add_executable(runTests tests/tests.cpp src/whattotest.cpp src/hello.cpp)
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
-
 add_executable(runTableTennisTests tests/test_tabletennisplayer.cpp src/tabletennisplayer.cpp src/i_strokable.cpp
                src/forehandstroker.cpp src/backhandstroker.cpp)
 target_link_libraries(runTableTennisTests ${GTEST_LIBRARIES} pthread)
