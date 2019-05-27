@@ -3,6 +3,7 @@
 #include <cpp_composition_over_inheritance_code/i_strokable.h>
 #include <cpp_composition_over_inheritance_code/forehandstroker.h>
 #include <cpp_composition_over_inheritance_code/backhandstroker.h>
+#include <cpp_composition_over_inheritance_code/i_movable.h>
 
 TEST(TableTennisPlayerTest, Constructor) {
     std::unique_ptr<table_tennis::I_Strokable> strokeBehaviour (new table_tennis::ForehandStroker());;
@@ -55,6 +56,35 @@ TEST(ForehandStroker, override)
     strokeBehaviour->stroke();
     std::string output = testing::internal::GetCapturedStdout();
     ASSERT_EQ("Stroke with forehand!\n", output);
+}
+
+TEST(I_Movable, override)
+{
+    std::unique_ptr<table_tennis::I_Movable> moveBehaviour;
+}
+
+TEST(TableTennisPlayerTest, stateMachine)
+{
+    std::unique_ptr<table_tennis::I_Strokable> backhandStroker (new table_tennis::BackhandStroker());
+    table_tennis::TableTennisPlayer maLong(backhandStroker);
+
+    testing::internal::CaptureStdout();
+    maLong.stroke();
+    std::string output = testing::internal::GetCapturedStdout();
+    ASSERT_EQ("Stroke with backhand!\n", output);
+
+    testing::internal::CaptureStdout();
+    maLong.stroke();
+    std::string output2 = testing::internal::GetCapturedStdout();
+    ASSERT_EQ("Stroke with forehand!\n", output2);
+}
+
+TEST(TableTennisPlayerTest, move)
+{
+    std::unique_ptr<table_tennis::I_Strokable> backhandStroker (new table_tennis::BackhandStroker());
+    table_tennis::TableTennisPlayer maLong(backhandStroker);
+
+    maLong.move();
 }
 
 

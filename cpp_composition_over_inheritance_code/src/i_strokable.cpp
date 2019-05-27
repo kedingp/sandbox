@@ -7,5 +7,10 @@ namespace table_tennis
     {
 
     }
+
+    I_Strokable::~I_Strokable()
+    {
+
+    }
 }
 

@@ -16,13 +16,13 @@ include_directories(include ${GTEST_INCLUDE_DIRS})
 file(GLOB SOURCES "src/*.cpp")
  
 add_executable(tt_prog src/tabletennisplayer_app.cpp src/tabletennisplayer.cpp src/i_strokable.cpp src/forehandstroker.cpp
-               src/backhandstroker.cpp)
+               src/backhandstroker.cpp src/i_movable.cpp)
 
 
  
 # Link runTests with what we want to test and the GTest and pthread library
 add_executable(runTableTennisTests tests/test_tabletennisplayer.cpp src/tabletennisplayer.cpp src/i_strokable.cpp
-               src/forehandstroker.cpp src/backhandstroker.cpp)
+               src/forehandstroker.cpp src/backhandstroker.cpp src/i_movable.cpp)
 target_link_libraries(runTableTennisTests ${GTEST_LIBRARIES} pthread)
 
 #add_executable(bowlingGameTest tests/bowlingGameTest.cpp src/bowlingGame.cpp)
