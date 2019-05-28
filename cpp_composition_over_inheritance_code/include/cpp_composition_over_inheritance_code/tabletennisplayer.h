@@ -1,13 +1,13 @@
 #ifndef TABLETENNISPLAYER_H
 #define TABLETENNISPLAYER_H
 
-#include <cpp_composition_over_inheritance_code/i_strokable.h>
-#include <cpp_composition_over_inheritance_code/forehandstroker.h>
 #include <cpp_composition_over_inheritance_code/i_movable.h>
 #include <memory>
 
 namespace table_tennis
 {
+    class I_Strokable;
+
     class TableTennisPlayer
     {
     public:

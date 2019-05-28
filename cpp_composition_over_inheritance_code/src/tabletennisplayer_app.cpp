@@ -1,4 +1,5 @@
 #include <cpp_composition_over_inheritance_code/tabletennisplayer.h>
+#include <cpp_composition_over_inheritance_code/forehandstroker.h>
 #include <iostream>
 
 int main()
