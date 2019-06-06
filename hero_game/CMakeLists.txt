@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 2.8.9)
+cmake_minimum_required(VERSION 3.5.1)
 project(hero_game)
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 14)
 
 # Locate GTest
 find_package(GTest REQUIRED)
@@ -14,8 +14,16 @@ include_directories(include ${GTEST_INCLUDE_DIRS})
  
 #However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "src/*.cpp")
+
+add_executable(timer_sample src/sample.cpp)
+target_link_libraries(timer_sample pthread)
+
+add_executable(hero_app src/hero_main.cpp src/ability.cpp src/abilitystate.cpp src/ready.cpp src/cooldown.cpp
+               src/toggledon.cpp src/toggleability.cpp src/passiveability.cpp src/executableability.cpp src/hero.cpp)
+target_link_libraries(hero_app pthread)
  
-add_executable(heroApp src/hero_main.cpp src/ability.cpp src/abilitystate.cpp)
+#add_executable(tt_prog src/tabletennisplayer_app.cpp src/tabletennisplayer.cpp src/i_strokable.cpp src/forehandstroker.cpp
+#               src/backhandstroker.cpp src/i_movable.cpp)
 
 
  

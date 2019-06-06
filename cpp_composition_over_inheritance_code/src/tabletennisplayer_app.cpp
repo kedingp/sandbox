@@ -6,8 +6,19 @@ int main()
 {
     std::unique_ptr<table_tennis::I_Strokable> forehandStroker (new table_tennis::ForehandStroker());
     table_tennis::TableTennisPlayer timoBoll(forehandStroker);
-    for(int i = 0; i < 9; i++)
+    unsigned int command;
+    while(true)
     {
-        timoBoll.stroke();
+        std::cout << "Your command:\n" << std::endl;
+        std::cin >> command;
+        std::cout << "is" << command << std::endl;
+        if (command == 1)
+        {
+            timoBoll.stroke();
+        }
+        else
+        {
+            return 0;
+        }
     }
 }
