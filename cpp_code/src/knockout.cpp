@@ -9,16 +9,16 @@ std::string choosePreference(std::vector<std::string> i_title, std::istream& i_i
     }
     else
     {
-       unsigned int preference;
-       std::cout << "\nChoose between the following titles by selecting the number: " << std::endl;
-       for(unsigned int title_index = 0; title_index < i_title.size(); title_index++)
-       {
-	   std::cout << title_index+1 << ": " << i_title[title_index] << std::endl;
-       }
-       i_istream >> preference;
+        unsigned int preference;
+        std::cout << "\nChoose between the following titles by selecting the number: " << std::endl;
+        for(unsigned int title_index = 0; title_index < i_title.size(); title_index++)
+        {
+            std::cout << title_index+1 << ": " << i_title[title_index] << std::endl;
+        }
+        i_istream >> preference;
        
-       std::cout << "Your choice: " << i_title[preference-1] << std::endl;
-       return i_title[preference-1];
+        std::cout << "Your choice: " << i_title[preference-1] << std::endl;
+        return i_title[preference-1];
     }
 }
 

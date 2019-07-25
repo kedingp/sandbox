@@ -1,12 +1,3 @@
-# Folders
-cpp_code/build
-cpp_code/tests/data.tsv
-cpp_composition_over_inheritance_code-build
-hero_game-build
-
-# QT Creator
-*.user
-
 # Prerequisites
 *.d
 
