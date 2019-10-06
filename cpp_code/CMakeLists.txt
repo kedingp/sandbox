@@ -17,7 +17,6 @@ file(GLOB SOURCES "src/*.cpp")
  
 add_executable(prog src/mainapp.cpp src/hello.cpp)
 add_executable(helloWorld src/helloWorld.cpp)
-add_executable(knockoutApp src/knockoutApp.cpp src/knockout.cpp)
 
 
  
@@ -28,5 +27,4 @@ target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
 #add_executable(bowlingGameTest tests/bowlingGameTest.cpp src/bowlingGame.cpp)
 #target_link_libraries(bowlingGameTest ${GTEST_LIBRARIES} pthread)
 
-add_executable(knockoutTest tests/knockoutTest.cpp src/knockout.cpp)
-target_link_libraries(knockoutTest ${GTEST_LIBRARIES} pthread)
+
